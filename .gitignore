@@ -94,6 +94,7 @@ fabric.properties
 pyvenv.cfg
 .venv
 venv/
+.venv/
 pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/venv,pycharm
