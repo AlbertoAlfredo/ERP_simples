@@ -99,3 +99,7 @@ venv/
 pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/venv,pycharm
+
+#Banco de dados
+
+*.db
