@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1>Lista de Clientes</h1>
+
+                <table>
+                        <tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Idade</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Criado em</th>
+                        </tr>
+                {% for nome in object_list %}
+                        <tr>
+                                <td>{{ nome.nome }}</td>
+                                <td>{{ nome.cpf }}</td>
+                                <td>{{ nome.idade }}</td>
+                                <td>{{ nome.email }}</td>
+                                <td>{{ nome.telefone }}</td>
+                                <td>{{ nome.criado_em|date:"d/m/Y" }}</td>
+                        </tr>
+                {% empty %}
+                        <li>Sem itens na lista.</li>
+                {% endfor %}
+                </table>
+{% endblock content %}
