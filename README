@@ -1,1 +1,27 @@
 Projeto de um sistema ERP feito em Python
+
+As partes que devem ter por agora:
+
+-Cliente
+--id
+--nome
+--numero telefone
+--recado (nome e numero)
+
+-Veiculo
+--id
+--proprietario
+--marca / modelo
+--placa
+
+--Orcamento
+---nome_cliente fk
+---veiculo fk
+
+-Estoque
+--nome
+--quantidade
+--codigo
+
+-Serviço
+-descrição
