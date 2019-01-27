@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cliente</title>
+</head>
+<body>
+    <h1>Aqui vai a lista de clientes</h1>
+
+    {% for cliente in clientes %}
+    <li>
+        <ul>{{cliente.first_name}} {{cliente.last_name}}<a href="{% url 'cliente_editar' cliente.id %}">editar</a> <a href="{% url 'cliente_delete' cliente.id%}">Apagar</a></ul>
+    </li>
+    {% endfor %}
+    <a href="{% url 'cliente_cadastro' %}">Cadastro</a>
+
+    <div class="pagination">
+            <span class="step-links">
+                {% if clientes.has_previous %}
+                    <a href="?page=1">&laquo; Pag Inicial</a>
+                    <a href="?page={{ clientes.previous_page_number }}">voltar</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ clientes.number }} of {{ clientes.paginator.num_pages }}.
+                </span>
+        
+                {% if clientes.has_next %}
+                    <a href="?page={{ clientes.next_page_number }}">próximo</a>
+                    <a href="?page={{ clientes.paginator.num_pages }}">última pag &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+</body>
+</html>

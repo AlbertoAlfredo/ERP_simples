@@ -7,6 +7,12 @@
     <title>Cliente</title>
 </head>
 <body>
-    <h1>Excluir cliente?</h1>
+    <h1>Deseja mesmo excluir {{cliente.first_name}}?</h1>
+    <form method="post" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+        <button type="submit">Apagar</button>
+
+    </form>
 </body>
 </html>

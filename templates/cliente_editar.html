@@ -7,6 +7,11 @@
     <title>Cliente</title>
 </head>
 <body>
-    <h1>Aqui vai a lista de clientes</h1>
+    <h1>Aqui cadastrará o cliente</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
