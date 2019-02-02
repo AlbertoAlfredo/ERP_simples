@@ -10,7 +10,7 @@
     <h1>Aqui cadastrará o cliente</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form}}
+        {{form.as_table}}
         <button type="submit">Enviar</button>
     </form>
 </body>

@@ -1,6 +1,7 @@
 from django.urls import path, include
-from .views import produtos
+from .views import veiculos_lista, veiculos_cadastro
 
 urlpatterns =[
-    path('', produtos, name = 'produtos')
+    path('', veiculos_lista, name = 'veiculos'),
+    path('cadastro/', veiculos_cadastro, name = 'cadastro' )
 ]

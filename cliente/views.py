@@ -4,7 +4,6 @@ from .forms import PersonForm
 from django.core.paginator import Paginator, InvalidPage
 
 
-
 # Create your views here.
 def cliente_lista(request):
     clientes = Person.objects.all()
@@ -22,6 +21,7 @@ def cliente_cadastro(request):
         return redirect('cliente_lista')
     return render(request, 'cliente_cadastro.html', {'form':form})
 
+
 def cliente_editar(request, id):
     cliente = get_object_or_404(Person, pk=id)
     form = PersonForm(request.POST or None, request.FILES or None, instance=cliente)
@@ -30,6 +30,7 @@ def cliente_editar(request, id):
         form.save()
         return redirect('cliente_lista')
     return render(request, 'cliente_editar.html', {'form':form})
+
 
 def cliente_delete(request, id):
     cliente = get_object_or_404(Person, pk=id)
