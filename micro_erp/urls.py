@@ -18,10 +18,13 @@ from django.urls import path, include
 from .views import index
 from cliente import urls as cliente_url
 from produtos import urls as produtos_url
+from veiculos import urls as veiculos_url
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('cliente/', include(cliente_url)),
-    path('produto/', include(produtos_url))
+    path('produtos/', include(produtos_url)),
+    path('veiculos/', include(veiculos_url)),
 ]
