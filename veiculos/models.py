@@ -17,16 +17,3 @@ class Veiculos(models.Model):
         return self.marca + ' ' + self.modelo
 
 
-
-#-Veiculo
-#|_id
-#|_proprietario
-#|_marca / modelo
-#|_placa
-#-Servico
-#|_preco
-#|_descricao
-#-Estoque
-#|_fk-produto
-#|_quantidade
-#|_codigo

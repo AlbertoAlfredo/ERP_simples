@@ -19,3 +19,22 @@ def veiculos_cadastro(request):
         form.save()
         return redirect('veiculos')
     return render(request, 'veiculos_cadastro.html', {"form":form})
+
+
+def veiculos_editar(request, id):
+    veiculos = get_object_or_404(Veiculos, pk=id)
+    form = VeiculosForm(request.POST or None, request.FILES or None, instance=veiculos)
+
+    if form.is_valid():
+        form.save()
+        return redirect('veiculos_lista')
+    return render(request, 'veiculos_editar.html', {'form':form})
+
+
+def veiculos_delete(request, id):
+    veiculos = get_object_or_404(Veiculos, pk=id)
+
+    if request.method == "POST":
+        veiculos.delete()
+        return redirect('veiculos_lista')
+    return render(request, 'veiculos_delete.html', {'veiculos':veiculos})

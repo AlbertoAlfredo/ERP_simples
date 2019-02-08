@@ -10,7 +10,7 @@
     <h1>Lista de Veiculos</h1>
     {% for veiculos in veiculos %}
     <li>
-        <ul>{{veiculos.marca}} {{veiculos.modelo}} {{ veiculos.placa }} {{ veiculos.preco }}</ul>
+        <ul>{{veiculos.marca}} {{veiculos.modelo}} {{ veiculos.placa }} {{ veiculos.preco }} <a href="{% url 'veiculos_editar' veiculos.id %}">editar</a>  <a href="{% url 'veiculos_delete' veiculos.id%}">Apagar</a> </ul>
     </li>
     {% endfor %}
     <a href="{% url 'cadastro' %}">Cadastro</a>
