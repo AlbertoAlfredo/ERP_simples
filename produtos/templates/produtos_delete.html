@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Deseja mesmo excluir o produto : {{ produtos.cod_barra }} {{produtos.nome}}?</h1>
+    <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <button type="submit">Apagar</button>
+
+    </form>
+</body>
+</html>

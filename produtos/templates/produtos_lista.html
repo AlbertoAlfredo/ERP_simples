@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Lista de produtos</h1>
+    {% for produtos in produtos %}
+    <li>
+        <ul>{{produtos.cod_barra}} {{produtos.nome}} {{ produtos.preco }} <a href="{% url 'produtos_editar' produtos.id %}">editar</a>  <a href="{% url 'produtos_delete' produtos.id%}">Apagar</a> </ul>
+    </li>
+    {% endfor %}
+    <a href="{% url 'produtos_cadastro' %}">Cadastro</a>
+        <div class="pagination">
+            <span class="step-links">
+                {% if produtos.has_previous %}
+                    <a href="?page=1">&laquo; Pag Inicial</a>
+                    <a href="?page={{ produtos.previous_page_number }}">voltar</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ produtos.number }} of {{ produtos.paginator.num_pages }}.
+                </span>
+
+                {% if produtos.has_next %}
+                    <a href="?page={{ produtos.next_page_number }}">próximo</a>
+                    <a href="?page={{ produtos.paginator.num_pages }}">última pag &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+</body>
+</html>
