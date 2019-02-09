@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{% static 'bootstrap\4.2.1\css\bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static 'bootstrap\4.2.1\css\bootstrap-theme.min.css' %}">
+   <link rel="stylesheet" href="{% static 'bootstrap\3.3.0\css\bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static 'css\css.css' %}">
+   <script src="{% static 'bootstrap\1.11.1\js\jquery.min.js' %}"></script>
+   <script src="{% static 'bootstrap\3.3.0\js\bootstrap.min.js' %}"></script>
+    <title>Página inicial</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!-- topo -->
+      <div class="row border-bottom border-secondary topo justify-content-center" style="margin-bottom: 10px;">
+        Ambar Informática
+      </div>
+      <div class="row">
+        <!-- Menu lateral  -->
+        <div class="col-sm-2 align-items-stretch  border-right border-secondary">
+          <ol>
+            <nav class="navbar navbar-default sidebar" role="navigation">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastra</a>
+                      <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="{% url 'cliente_cadastro' %}">Clientes</a></li>
+                        <li><a href="{% url 'produtos_cadastro' %}">Produtos</a></li>
+                        <li><a href="{% url 'servicos_cadastro' %}">Serviços</a></li>
+                      </ul>
+
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orçamento </a>
+                      <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="{% url 'produtos_lista' %}">Listar Produtos</a></li>
+                        <li><a href="#">Reportar</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Informes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            </ol>
+        </div>
+        <!-- centro  -->
+        <div class="col-sm-10">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </div>
+    </div>
+    <!-- rodapé -->
+    <div class="border-top border-secondary fixed-bottom bg d-flex justify-content-end  img-fluid">
+      <img src="{% static 'img\logo.png' %}" alt="Ambar Informática "  style="height: 80px; border: none;">
+    </div>
+
+</body>
+</html>
