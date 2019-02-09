@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Servicos</title>
+</head>
+<body>
+    <h1>Lista de Servicos</h1>
+    {% for servicos in servicos %}
+    <li>
+        <ul>{{servicos.codigo}} {{servicos.nome}} {{ servicos.preco }} <a href="{% url 'servicos_editar' servicos.id %}">editar</a>  <a href="{% url 'servicos_delete' servicos.id%}">Apagar</a> </ul>
+    </li>
+    {% endfor %}
+    <a href="{% url 'servicos_cadastro' %}">Cadastro</a>
+        <div class="pagination">
+            <span class="step-links">
+                {% if servicos.has_previous %}
+                    <a href="?page=1">&laquo; Pag Inicial</a>
+                    <a href="?page={{ servicos.previous_page_number }}">voltar</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ servicos.number }} of {{ servicos.paginator.num_pages }}.
+                </span>
+
+                {% if servicos.has_next %}
+                    <a href="?page={{ servicos.next_page_number }}">próximo</a>
+                    <a href="?page={{ servicos.paginator.num_pages }}">última pag &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+</body>
+</html>

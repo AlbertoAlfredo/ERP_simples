@@ -19,6 +19,7 @@ from .views import index
 from cliente import urls as cliente_url
 from produtos import urls as produtos_url
 from veiculos import urls as veiculos_url
+from servicos import urls as servicos_url
 
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path('cliente/', include(cliente_url)),
     path('produtos/', include(produtos_url)),
     path('veiculos/', include(veiculos_url)),
+    path('servicos/', include(servicos_url)),
 ]
