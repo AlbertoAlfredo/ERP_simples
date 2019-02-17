@@ -1,14 +1,27 @@
-# Orçamentos
+# ERP simples
 
 Python 3.6+ e Django 2.1.3+
 
+Sistema simples de ERP para cadastro de produtos, serviços, clientes e controle de estoque
+
+O sistema ainda está em fase alpha e estou trabalhando com Django, HTML, CSS e javascript
+
 ## Objetivo
 
-Sistema para controle de estoques, clientes e fluxo de caixa.
+O App tem como objetivo ser um sistema simples que seja o ideal para quem está com sua pequena empresa ou seja MEI e tenha um sistema que supra sua necessidade básica.
+
+Tenho a meta de expandir o aplicativo para que ele com o tempo consiga suprir toda e qualquer necessidade que uma empresa possa ter.
+
+O aplicativo tem como visão inicial ser instalado localmente e assim estou trabalhando para que o mesmo quando pronto possa ser facilmente instalado.
 
 
-Cadastro de clientes e produtos.
+##Etc
 
+Qualquer ajuda é sempre bem vinda
+
+O aplicativo é feito sob a licensa Apache 2.0 que garante total liberdade a qualquer um de usar para qualquer fim o código/aplicativo e apenas deve informar de onde veio o código e que hoveram mudanças, além de que se um dia eu tiver uma marca registrada ela não está incluida no app e não deverá ser usada.
+
+Na prática você está livre para usar a vontade e mudar o quanto quiser, apenas coloque no readme de onde veio a base e que a mesma foi modificada.
 
 ## Baixando e rodando a app
 
@@ -50,3 +63,21 @@ Veja o [Changelog](CHANGELOG.md). (ainda sendo criada)
 
 
 Necessário instalar o python 3.6
+
+
+
+##Copyright
+
+Copyright [2019] [Alberto Alfredo]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
