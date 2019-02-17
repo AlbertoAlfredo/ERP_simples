@@ -44,6 +44,7 @@ nav.sidebar, .main{
     padding: 10px 10px 0 10px;
   }
 
+
  @media (min-width: 765px) {
 
     .main{
@@ -148,4 +149,9 @@ nav.sidebar, .main{
     padding-left: 15px;
   }
   
- 
+ @media print {
+   #menu-lateral, #adiciona, .btn, #acao{
+     display: none;
+   }
+
+ }

@@ -20,6 +20,7 @@ from cliente import urls as cliente_url
 from produtos import urls as produtos_url
 from veiculos import urls as veiculos_url
 from servicos import urls as servicos_url
+from carrinho_compras import urls as carrinho_url
 
 
 urlpatterns = [
@@ -29,4 +30,5 @@ urlpatterns = [
     path('produtos/', include(produtos_url)),
     path('veiculos/', include(veiculos_url)),
     path('servicos/', include(servicos_url)),
+    path('carrinho/', include(carrinho_url))
 ]
