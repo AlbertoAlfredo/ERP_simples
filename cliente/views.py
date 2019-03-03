@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
+from django.db.models import Q
 from .forms import PersonForm
 from django.core.paginator import Paginator, InvalidPage
 
 
 # Create your views here.
 def cliente_lista(request):
-    clientes = Person.objects.all()
+    if request.GET:
+        slug = request.GET['search_box']
+        clientes = Person.objects.filter(Q(first_name__icontains=slug) | Q(last_name__icontains=slug) | Q(phone__icontains=slug) | Q(text__icontains=slug))
+    else:
+        clientes = Person.objects.all()
     paginator = Paginator(clientes, 10)
     page = request.GET.get('page')
     clientes = paginator.get_page(page)

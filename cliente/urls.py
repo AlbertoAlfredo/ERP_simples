@@ -8,4 +8,3 @@ urlpatterns = [
     path('editar/<int:id>/', cliente_editar, name="cliente_editar"),
     path('delete/<int:id>/', cliente_delete, name='cliente_delete'),
 ]
-

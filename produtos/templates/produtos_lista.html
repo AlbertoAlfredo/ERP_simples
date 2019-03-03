@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Lista de produtos</h1>
+    <form method="get">
+    <div class="row">
+      <div class="six columns">
+        <input class="u-full-width" type="text" placeholder="Localizar..." name="search_box">
+      </div>
+    </div>
+  </form>
     {% for produtos in produtos %}
     <li>
         <ul>{{produtos.cod_barra}} {{produtos.nome}} {{ produtos.preco }} <a href="{% url 'produtos_editar' produtos.id %}">editar</a>  <a href="{% url 'produtos_delete' produtos.id%}">Apagar</a> </ul>

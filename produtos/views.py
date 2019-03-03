@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produtos
+from django.db.models import Q
 from .forms import ProdutosForm
 from django.core.paginator import Paginator, InvalidPage
 
 
 # Create your views here.
 def produtos_lista(request):
-    produtos = Produtos.objects.all()
+    if request.GET:
+        slug = request.GET['search_box']
+        produtos = Produtos.objects.filter(Q(cod_barra__icontains=slug) | Q(nome__icontains=slug) | Q(preco__icontains=slug) | Q(etc__icontains=slug))
+    else:
+        produtos = Produtos.objects.all()
     paginator = Paginator(produtos, 10)
     page = request.GET.get('page')
     produtos = paginator.get_page(page)

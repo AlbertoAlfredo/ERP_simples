@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Servicos
+from django.db.models import Q
 from .forms import ServicosForm
 from django.core.paginator import Paginator, InvalidPage
 
 
 # Create your views here.
 def servicos_lista(request):
+    if request.GET:
+        slug = request.GET['search_box']
+        servicos = Servicos.objects.filter(Q(codigo__icontains=slug) | Q(nome__icontains=slug) | Q(preco__icontains=slug) | Q(etc__icontains=slug))
+    else:
+        servicos = Servicos.objects.all()
     servicos = Servicos.objects.all()
     paginator = Paginator(servicos, 10)
     page = request.GET.get('page')

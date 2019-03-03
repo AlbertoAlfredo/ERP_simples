@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Aqui vai a lista de clientes</h1>
-
+    <form method="get">
+    <div class="row">
+      <div class="six columns">
+        <input class="u-full-width" type="text" placeholder="Localizar..." name="search_box">
+      </div>
+    </div>
+  </form>
     {% for cliente in clientes %}
     <li>
         <ul>{{cliente.first_name}} {{cliente.last_name}}<a href="{% url 'cliente_editar' cliente.id %}">editar</a> <a href="{% url 'cliente_delete' cliente.id%}">Apagar</a></ul>
@@ -15,11 +21,11 @@
                     <a href="?page=1">&laquo; Pag Inicial</a>
                     <a href="?page={{ clientes.previous_page_number }}">voltar</a>
                 {% endif %}
-        
+
                 <span class="current">
                     Page {{ clientes.number }} of {{ clientes.paginator.num_pages }}.
                 </span>
-        
+
                 {% if clientes.has_next %}
                     <a href="?page={{ clientes.next_page_number }}">próximo</a>
                     <a href="?page={{ clientes.paginator.num_pages }}">última pag &raquo;</a>
